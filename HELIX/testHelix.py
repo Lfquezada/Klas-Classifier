@@ -3,7 +3,7 @@
 # testing Helix Module
 import pandas as pd
 import matplotlib.pyplot as plt
-from Helix import getBestFitModel,predict
+from Helix import getBestFitModel,helixPredict
 
 # Import dataset
 dataset = pd.read_csv('iris-data-clean.csv')
@@ -44,7 +44,7 @@ elif finalPred == 3:
 	print('Iris-virginica')
 
 # Predict via Helix.predict
-finalPred = predict(X,y,scaled=True,testSize=0.25,threshold=0.8,inputX=inputData)
+finalPred = helixPredict(X,y,scaled=True,testSize=0.25,threshold=0.8,inputX=inputData)
 
 if finalPred == 1:
 	print('Iris-setosa')

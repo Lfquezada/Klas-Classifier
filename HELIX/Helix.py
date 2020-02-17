@@ -9,7 +9,6 @@ print('\n\t\tH  E  L  I  X\n')
 
 # Libraries
 import pandas as pd
-import numpy as np
 from scipy import stats
 from sklearn.metrics import confusion_matrix,accuracy_score
 from sklearn.model_selection import train_test_split
@@ -83,7 +82,7 @@ def getBestFitModel(X,y,scaled,testSize,returnAllResults):
 		return bestFitClassifier,bestFitAlgorithmName,bestAccuracy
 
 
-def predict(X,y,scaled,testSize,threshold,inputX):
+def helixPredict(X,y,scaled,testSize,threshold,inputX):
 
 	# Vars
 	allKs = [3,5,7,11,13,15]
