@@ -140,8 +140,3 @@ def predict(X,y,scaled,testSize,threshold,inputX):
 
 	return finalPred
 
-
-
-
-
-

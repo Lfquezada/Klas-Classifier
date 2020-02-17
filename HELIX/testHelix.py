@@ -16,7 +16,7 @@ dataset['class'] = dataset['class'].astype('float64')
 X = dataset.iloc[:, [0,1,2,3]].values
 y = dataset.iloc[:, 4].values
 
-classifier,name,accuracy,allNames,allResults = getBestFitModel(X,y,scaled=False,testSize=0.25,returnAllResults=True)
+classifier,name,accuracy,allNames,allResults = getBestFitModel(X,y,scaled=True,testSize=0.25,returnAllResults=True)
 
 print('\n>< Best fit algorithm: ' + name)
 print('>< Accuracy: ' + str(accuracy*100)[:4] + '%')
@@ -30,17 +30,21 @@ plt.show()
 # Predictions
 print('\n>< Prediction')
 
-inputData = [[5.5,2.6,4.4,1.2]]
+inputData = [[5.9,3.0,5.1,1.8]]
 
 # Predict via the best fit model
-'''
 #inputData = sc.transform(inputData)
 finalPred = int(classifier.predict(inputData))
-'''
+
+if finalPred == 1:
+	print('Iris-setosa')
+elif finalPred == 2:
+	print('Iris-versicolor')
+elif finalPred == 3:
+	print('Iris-virginica')
 
 # Predict via Helix.predict
-finalPred = predict(X,y,scaled=False,testSize=0.25,threshold=0.8,inputX=inputData)
-
+finalPred = predict(X,y,scaled=True,testSize=0.25,threshold=0.8,inputX=inputData)
 
 if finalPred == 1:
 	print('Iris-setosa')
