@@ -135,7 +135,10 @@ def helixPredict(X,y,scaled,testSize,threshold,inputX):
 			allPredictions.append(classifiers[i].predict(inputX))
 
 	# the most common prediction from all models is selected as the final one
-	finalPred = int(stats.mode(allPredictions)[0][0])
-
-	return finalPred
+	if len(allPredictions) > 0:
+		finalPred = int(stats.mode(allPredictions)[0][0])
+		return finalPred
+	else:
+		print('! No predictions could be made with threshold ' + str(threshold) + '\n! Returning none.')
+		return None
 

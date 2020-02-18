@@ -30,10 +30,9 @@ plt.show()
 # Predictions
 print('\n>< Prediction')
 
-inputData = [[5.9,3.0,5.1,1.8]]
+inputData = [[6.2,2.9,4.3,1.3]]
 
 # Predict via the best fit model
-#inputData = sc.transform(inputData)
 finalPred = int(classifier.predict(inputData))
 
 if finalPred == 1:
@@ -44,7 +43,7 @@ elif finalPred == 3:
 	print('Iris-virginica')
 
 # Predict via Helix.predict
-finalPred = helixPredict(X,y,scaled=True,testSize=0.25,threshold=0.8,inputX=inputData)
+finalPred = helixPredict(X,y,scaled=True,testSize=0.25,threshold=0.90,inputX=inputData)
 
 if finalPred == 1:
 	print('Iris-setosa')
