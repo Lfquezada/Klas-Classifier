@@ -1,11 +1,11 @@
 
 '''
-H E L I X
+K L A S
 
 a proyect by Luis Quezada
 '''
 
-print('\n\t\tH  E  L  I  X\n')
+#print('\n\t\tK L A S\n')
 
 # Libraries
 import pandas as pd
@@ -82,7 +82,7 @@ def getBestFitModel(X,y,scaled,testSize,returnAllResults):
 		return bestFitClassifier,bestFitAlgorithmName,bestAccuracy
 
 
-def helixPredict(X,y,scaled,testSize,threshold,inputX):
+def klasPredict(X,y,scaled,testSize,threshold,inputX):
 
 	# Vars
 	allKs = [3,5,7,11,13,15]

@@ -1,9 +1,9 @@
 
 
-# testing Helix Module
+# testing Klas Module
 import pandas as pd
 import matplotlib.pyplot as plt
-from Helix import getBestFitModel,helixPredict
+from Klas import getBestFitModel,klasPredict
 
 # Import dataset
 dataset = pd.read_csv('iris-data-clean.csv')
@@ -43,7 +43,7 @@ elif finalPred == 3:
 	print('Iris-virginica')
 
 # Predict via Helix.predict
-finalPred = helixPredict(X,y,scaled=True,testSize=0.25,threshold=0.90,inputX=inputData)
+finalPred = klasPredict(X,y,scaled=True,testSize=0.25,threshold=0.90,inputX=inputData)
 
 if finalPred == 1:
 	print('Iris-setosa')
