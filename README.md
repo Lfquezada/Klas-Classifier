@@ -1,4 +1,5 @@
-# Helix-Classifier
+# K L A S 
+### Classifier
 Machine learning module for classification and data prediction.
 
 ## Requirements
@@ -9,8 +10,8 @@ Machine learning module for classification and data prediction.
 ## Usage
 
 ```
-from Helix import getBestFitModel
-from Helix import helixPredict
+from Klas import getBestFitModel
+from Klas import klasPredict
 ```
 
 ## Algorithms Used
