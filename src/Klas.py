@@ -5,8 +5,6 @@ K L A S
 a proyect by Luis Quezada
 '''
 
-#print('\n\t\tK L A S\n')
-
 # Libraries
 import pandas as pd
 from scipy import stats

@@ -8,9 +8,11 @@ from Klas import getBestFitModel,klasPredict
 # Import dataset
 dataset = pd.read_csv('iris-data-clean.csv')
 
-dataset['class'] = dataset['class'].str.replace('Iris-setosa','1')
-dataset['class'] = dataset['class'].str.replace('Iris-versicolor','2')
-dataset['class'] = dataset['class'].str.replace('Iris-virginica','3')
+flowerClasses = ['Iris-setosa','Iris-versicolor','Iris-virginica']
+
+dataset['class'] = dataset['class'].str.replace(flowerClasses[0],'0')
+dataset['class'] = dataset['class'].str.replace(flowerClasses[1],'1')
+dataset['class'] = dataset['class'].str.replace(flowerClasses[2],'2')
 dataset['class'] = dataset['class'].astype('float64')
 
 X = dataset.iloc[:, [0,1,2,3]].values
@@ -32,22 +34,17 @@ print('\n>< Prediction')
 
 inputData = [[6.2,2.9,4.3,1.3]]
 
+# remove line 9 in cvs to test this input
+#inputData = [[5.0,3.4,1.5,0.24999999999999997]]
+
 # Predict via the best fit model
 finalPred = int(classifier.predict(inputData))
 
-if finalPred == 1:
-	print('Iris-setosa')
-elif finalPred == 2:
-	print('Iris-versicolor')
-elif finalPred == 3:
-	print('Iris-virginica')
+# show prediction
+print(flowerClasses[finalPred])
 
 # Predict via Helix.predict
 finalPred = klasPredict(X,y,scaled=True,testSize=0.25,threshold=0.90,inputX=inputData)
 
-if finalPred == 1:
-	print('Iris-setosa')
-elif finalPred == 2:
-	print('Iris-versicolor')
-elif finalPred == 3:
-	print('Iris-virginica')
+# show prediction
+print(flowerClasses[finalPred])
