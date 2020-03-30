@@ -1,6 +1,6 @@
 # K L A S 
 ### Classifier
-Machine learning module for classification and data prediction.
+Machine learning module for classification and data prediction based on ensamble learning.
 
 ## Requirements
 * scipy
